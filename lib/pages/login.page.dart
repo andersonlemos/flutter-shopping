@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_shopping/pages/signup.page.dart';
+
+import 'google.button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -35,7 +38,7 @@ class LoginPage extends StatelessWidget {
                     right: 15,
                     top: 60,
                   ),
-                  child: ListView(
+                  child: Column(
                     children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +55,16 @@ class LoginPage extends StatelessWidget {
                               Text("Sign in to continue"),
                             ],
                           ),
-                          FlatButton(child: Text("Sign Up"), onPressed: () {}),
+                          FlatButton(
+                              child: Text("Sign Up"),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignUp(),
+                                  ),
+                                );
+                              }),
                         ],
                       ),
                       SizedBox(
@@ -103,6 +115,7 @@ class LoginPage extends StatelessWidget {
                         height: 10,
                       ),
                       Container(
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.all(
